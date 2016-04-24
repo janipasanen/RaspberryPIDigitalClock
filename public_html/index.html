@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+Adapted for HTML5 with external css, 2016-04-24 Jani Pasanen
+Original code from: http://qassoom.me/techie/2012/12/09/raspberry-pi-digital-clock/
+-->
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link rel="shortcut icon" href="time.ico">
+    <title>
+ 
+    </title>
+</head>
+<body bgcolor = black class="styling">
+    <table width=100% height=100%>
+    <tr>
+    <td>
+    <span id="digitalclock"></span>
+        <script>
+        //LCD Clock script- by javascriptkit.com
+        //Visit JavaScript Kit (http://javascriptkit.com) for script
+        //Credit must stay intact for use
+        var alternate=0;
+        var standardbrowser=!document.all&&!document.getElementById;
+        if (standardbrowser)
+        document.write('<form name="tick"><input type="text" name="tock" size="11"></form>');
+        function show(){
+            if (!standardbrowser)
+            var clockobj=document.getElementById? document.getElementById("digitalclock") : document.all.digitalclock;
+            var Digital=new Date();
+            var date=Digital.getDate();
+            var year=Digital.getFullYear();
+            var monthn = new Array(12);
+                monthn[0]="JAN";
+                monthn[1]="FEB";
+                monthn[2]="MAR";
+                monthn[3]="APR";
+                monthn[4]="MAY";
+                monthn[5]="JUN";
+                monthn[6]="JUL";
+                monthn[7]="AUG";
+                monthn[8]="SEP";
+                monthn[9]="OCT";
+                monthn[10]="NOV";
+                monthn[11]="DEC";
+            var month=monthn[Digital.getMonth()];
+            var weekday=new Array(7);
+                weekday[0]="SUN";
+                weekday[1]="MON";
+                weekday[2]="TUE";
+                weekday[3]="WED";
+                weekday[4]="THU";
+                weekday[5]="FRI";
+                weekday[6]="SAT";
+            var day=weekday[Digital.getDay()];
+            var hours=Digital.getHours();
+            var minutes=Digital.getMinutes();
+            var seconds=Digital.getSeconds();
+            var dn="AM";
+                if (hours==12) dn="PM";
+                    if (hours>12){
+                    dn="PM";
+                    hours=hours-12;
+                    }
+                if (hours==0) hours=12;
+                //if (hours.toString().length==1)
+                //hours="0"+hours
+                    if (minutes<=9)
+                        minutes="0"+minutes;
+                    if (seconds<=9)
+                        seconds="0"+seconds;
+                        if (standardbrowser){
+                            if (alternate==0)
+                                document.tick.tock.value=hours+" : "+minutes+" "+dn;
+                            else
+                                document.tick.tock.value=hours+"   "+minutes+" "+dn;
+                            }
+                        else{
+                            if (alternate==0)
+                                clockobj.innerHTML="<b style='font-size:120'>" + day + "</b> " +"<b style='font-size:50'>" + month + "</b>" + " <b style='font-size:120px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:60px'>" + year +"</b> <br>"
+                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+ "</b>"
+                            else
+                                clockobj.innerHTML="<b style='font-size:120'>" + day + "</b> " + "<b style='font-size:50'>" + month + "</b>" + " <b style='font-size:120px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:60px'>" + year +"</b> <br>"
+                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+"</b>"
+                        }
+                    alternate=(alternate==0)? 1 : 0
+                    setTimeout("show()",1000)
+        }
+window.onload=show
+</script>
+</td>
+</tr>
+</table>
+</body>
+</html>

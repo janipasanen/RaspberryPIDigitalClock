@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-apr-24, 21:42:51
+    Author     : jani
+*/
+
+.styling{
+background-color:black;
+color:white;
+font: bold 50px Lucida Console;
+padding: 3px;
+}
+
+table, th, td {
+   text-align: center; 
+   vertical-align: middle;
+}
