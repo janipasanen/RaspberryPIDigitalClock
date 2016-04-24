@@ -57,12 +57,12 @@ Original code from: http://qassoom.me/techie/2012/12/09/raspberry-pi-digital-clo
             var minutes=Digital.getMinutes();
             var seconds=Digital.getSeconds();
             var dn="AM";
-                if (hours==12) dn="PM";
+                if (hours===12) dn="PM";
                     if (hours>12){
                     dn="PM";
                     hours=hours-12;
                     }
-                if (hours==0) hours=12;
+                if (hours===0) hours=12;
                 //if (hours.toString().length==1)
                 //hours="0"+hours
                     if (minutes<=9)
@@ -70,23 +70,23 @@ Original code from: http://qassoom.me/techie/2012/12/09/raspberry-pi-digital-clo
                     if (seconds<=9)
                         seconds="0"+seconds;
                         if (standardbrowser){
-                            if (alternate==0)
+                            if (alternate===0)
                                 document.tick.tock.value=hours+" : "+minutes+" "+dn;
                             else
                                 document.tick.tock.value=hours+"   "+minutes+" "+dn;
                             }
                         else{
-                            if (alternate==0)
+                            if (alternate===0)
                                 clockobj.innerHTML="<b style='font-size:120'>" + day + "</b> " +"<b style='font-size:50'>" + month + "</b>" + " <b style='font-size:120px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:60px'>" + year +"</b> <br>"
-                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+ "</b>"
+                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+ "</b>";
                             else
                                 clockobj.innerHTML="<b style='font-size:120'>" + day + "</b> " + "<b style='font-size:50'>" + month + "</b>" + " <b style='font-size:120px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:60px'>" + year +"</b> <br>"
-                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+"</b>"
+                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+"</b>";
                         }
-                    alternate=(alternate==0)? 1 : 0
-                    setTimeout("show()",1000)
+                    alternate=(alternate===0)? 1 : 0;
+                    setTimeout("show()",1000);
         }
-window.onload=show
+window.onload=show;
 </script>
 </td>
 </tr>
