@@ -77,11 +77,11 @@ Original code from: http://qassoom.me/techie/2012/12/09/raspberry-pi-digital-clo
                             }
                         else{
                             if (alternate===0)
-                                clockobj.innerHTML="<b style='font-size:120'>" + day + "</b> " +"<b style='font-size:50'>" + month + "</b>" + " <b style='font-size:120px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:60px'>" + year +"</b> <br>"
-                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+ "</b>";
+                                clockobj.innerHTML="<b style='font-size:17px'>" + day + "</b> " +"<b style='font-size:17px'>" + month + "</b>" + " <b style='font-size:40px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:17px'>" + year +"</b> <br>"
+                                +"<b style='font-size:85px'>"+hours+"</b>"+" <sup style='font-size:10px'>"+dn+"</sup> <b style='font-size:60px'>"+minutes+"</b><b style='font-size:15px'> : </b>"+"<b style='font-size:36px'>" + seconds+ "</b>";
                             else
-                                clockobj.innerHTML="<b style='font-size:120'>" + day + "</b> " + "<b style='font-size:50'>" + month + "</b>" + " <b style='font-size:120px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:60px'>" + year +"</b> <br>"
-                                +"<b style='font-size:300px'>"+hours+"</b>"+" <sup style='font-size:40px'>"+dn+"</sup> <b style='font-size:200px'>"+minutes+"</b><sup> : </sup>"+"<b style='font-size:125px'>" + seconds+"</b>";
+                                clockobj.innerHTML="<b style='font-size:17px'>" + day + "</b> " + "<b style='font-size:17px'>" + month + "</b>" + " <b style='font-size:40px'>" + date + "</b>" + "&emsp;" + "<b style='font-size:17px'>" + year +"</b> <br>"
+                                +"<b style='font-size:85px'>"+hours+"</b>"+" <sup style='font-size:10px'>"+dn+"</sup> <b style='font-size:60px'>"+minutes+"</b><b style='font-size:15px'> : </b>"+"<b style='font-size:36px'>" + seconds+"</b>";
                         }
                     alternate=(alternate===0)? 1 : 0;
                     setTimeout("show()",1000);
